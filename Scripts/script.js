@@ -9,7 +9,7 @@ let appData = {
 	savings: false
     };
 alert("try");
-for(let i=0;i<2;i++) {
+for(let i=0;i<3;i++) {
 	let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
 	b = prompt("Во сколько обойдется?", '');
 	if((typeof(a) != null) && (typeof(a) === String) && 
