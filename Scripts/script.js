@@ -8,12 +8,23 @@ let appData = {
 	timeData: time,
 	savings: false
     };
-let a1 = prompt("Введите обязательную статью расходов в этом месяце", ''),
-	a2 = prompt("Во сколько обойдется?", ''),
+,
 	a3 = prompt("Введите обязательную статью расходов в этом месяце", ''),
 	a4 = prompt("Во сколько обойдется?", '');
 
-appData.expenses.a1 = a2;
-appData.expenses.a3 = a4;
 
-alert(appData.budget / 30);
+for(let i=0;i<2;i++) {
+	let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
+	b = prompt("Во сколько обойдется?", '');
+	if((typeof(a) != null) && (typeof(a) === String) && 
+		a != '' && a.length < 50 &&
+		(typeof(b) != null) && (typeof(+b) === Number) && 
+		b != '') 
+	{
+		console.log("done");
+		appData.expenses[a] = b;
+	} else {
+		alert("bad data");
+	}
+}
+alert(appData.expenses);
