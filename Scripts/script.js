@@ -8,7 +8,7 @@ let appData = {
 	timeData: time,
 	savings: false
     };
-
+alert("try");
 for(let i=0;i<2;i++) {
 	let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
 	b = prompt("Во сколько обойдется?", '');
