@@ -4,7 +4,7 @@ if (2+2==4) {
     console.log('False');
 }
 let num = 250;
-(num>40)? console.log('Tr'):console.log('Fl');
+//(num>40)? console.log('Tr'): console.log("Fal");
 switch(num) {
     case 50:
         console.log('num = 50');
