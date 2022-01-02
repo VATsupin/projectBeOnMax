@@ -18,28 +18,30 @@ let appData = {
 	timeData: time,
 	savings: false
     };
-alert("try1");
-for(let i=0;i<3;i++) {
-	let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
-	b = prompt("Во сколько обойдется?", '');
-	if((typeof(a) != null) && (typeof(a) == 'string') && 
-		a != '' && a.length < 50 &&
-		(typeof(b) != null) &&  
-		b != '') //(typeof(+b) === 'number') &&
-	{
-		console.log("done");
-		appData.expenses[a] = b;
-	} else {
-		alert("bad data");
-		alert(typeof(a));
-		i = --i;
+// alert("try1");
+function chooseExpenses() {
+		for(let i=0;i<3;i++) {
+		let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
+		b = prompt("Во сколько обойдется?", '');
+		if((typeof(a) != null) && (typeof(a) == 'string') && 
+			a != '' && a.length < 50 &&
+			(typeof(b) != null) &&  
+			b != '') //(typeof(+b) === 'number') &&
+		{
+			console.log("done");
+			appData.expenses[a] = b;
+		} else {
+			alert("bad data");
+			alert(typeof(a));
+			i = --i;
+		}
 	}
 }
-
+chooseExpenses();
 for(var index in appData.expenses)
 {alert(`index = ${index}, val = `+ appData.expenses[index]);}
 
-appData.moneyPerDay = appData.budget/30;
+appData.moneyPerDay = (appData.budget/30).toFixed();
 alert(`Ежедневный бюджет = ${appData.moneyPerDay}`);
 if(appData.moneyPerDay < 100) {
 	console.log(`Минимальный уровень достатка`);
