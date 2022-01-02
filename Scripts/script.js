@@ -22,6 +22,7 @@ for(let i=0;i<3;i++) {
 	} else {
 		alert("bad data");
 		alert(typeof(a));
+		i = --i;
 	}
 }
 
