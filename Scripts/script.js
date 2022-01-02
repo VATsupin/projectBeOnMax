@@ -1,5 +1,15 @@
-let money = prompt("Ваш бюджет на месяц?", '');
-let time = prompt('Введите дату в формате YYYY-MM-DD', '');
+let money;
+let time;
+function start() {
+	money = prompt("Ваш бюджет на месяц?", '');
+	time = prompt('Введите дату в формате YYYY-MM-DD', '')
+	while(isNaN(money) || money == null || 
+		money == "" || money < 0) {
+		alert("Что-то не так! Введите число > 0");
+		money = prompt("Ваш бюджет на месяц?", '');
+	}
+}
+start();
 let appData = {
 	budget: money,
 	expenses: {},
